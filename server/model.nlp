@@ -1,0 +1,971 @@
+{
+  "settings": {
+    "languages": [
+      "en",
+      "ar"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en",
+      "ar"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hoho": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "bye": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "goodby": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "later,see,you": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "is,my,slow,wifi": {
+            "intent": "support.wifi_slow",
+            "domain": "default"
+          },
+          "have,internet,issu,my,speed,with": {
+            "intent": "support.wifi_slow",
+            "domain": "default"
+          },
+          "internet,is,lag,my": {
+            "intent": "support.wifi_slow",
+            "domain": "default"
+          },
+          "fast,is,my,not,whi,wifi": {
+            "intent": "support.wifi_slow",
+            "domain": "default"
+          },
+          "is,monitor,my,not,on,turn": {
+            "intent": "problem.monitor",
+            "domain": "default"
+          },
+          "issu,monitor": {
+            "intent": "problem.monitor",
+            "domain": "default"
+          },
+          "display,not,screen,wo": {
+            "intent": "problem.monitor",
+            "domain": "default"
+          },
+          "black,is,my,screen": {
+            "intent": "problem.monitor",
+            "domain": "default"
+          },
+          "yes": {
+            "intent": "problem.monitor.yes",
+            "domain": "default"
+          },
+          "it,work": {
+            "intent": "problem.monitor.yes",
+            "domain": "default"
+          },
+          "it,solv,that": {
+            "intent": "problem.monitor.yes",
+            "domain": "default"
+          },
+          "no": {
+            "intent": "problem.monitor.no",
+            "domain": "default"
+          },
+          "did,it,not,work": {
+            "intent": "problem.monitor.no",
+            "domain": "default"
+          },
+          "not,still,work": {
+            "intent": "problem.monitor.no",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.hello": "default",
+          "greetings.bye": "default",
+          "support.wifi_slow": "default",
+          "problem.monitor": "default",
+          "problem.monitor.yes": "default",
+          "problem.monitor.no": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "hoho",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "goodbye",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "see you later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "my wifi is slow",
+            "intent": "support.wifi_slow"
+          },
+          {
+            "domain": "default",
+            "utterance": "having issues with my internet speed",
+            "intent": "support.wifi_slow"
+          },
+          {
+            "domain": "default",
+            "utterance": "my internet is lagging",
+            "intent": "support.wifi_slow"
+          },
+          {
+            "domain": "default",
+            "utterance": "why is my wifi not fast?",
+            "intent": "support.wifi_slow"
+          },
+          {
+            "domain": "default",
+            "utterance": "My monitor is not turning on",
+            "intent": "problem.monitor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Monitor issues",
+            "intent": "problem.monitor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Screen won't display",
+            "intent": "problem.monitor"
+          },
+          {
+            "domain": "default",
+            "utterance": "My screen is black",
+            "intent": "problem.monitor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Yes",
+            "intent": "problem.monitor.yes"
+          },
+          {
+            "domain": "default",
+            "utterance": "It worked",
+            "intent": "problem.monitor.yes"
+          },
+          {
+            "domain": "default",
+            "utterance": "That solved it",
+            "intent": "problem.monitor.yes"
+          },
+          {
+            "domain": "default",
+            "utterance": "No",
+            "intent": "problem.monitor.no"
+          },
+          {
+            "domain": "default",
+            "utterance": "It didn't work",
+            "intent": "problem.monitor.no"
+          },
+          {
+            "domain": "default",
+            "utterance": "Still not working",
+            "intent": "problem.monitor.no"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hoho": 1,
+              "hi": 1,
+              "hey": 1,
+              "bye": 1,
+              "goodby": 1,
+              "see": 1,
+              "you": 1,
+              "later": 1,
+              "my": 1,
+              "wifi": 1,
+              "is": 1,
+              "slow": 1,
+              "have": 1,
+              "issu": 1,
+              "with": 1,
+              "internet": 1,
+              "speed": 1,
+              "lag": 1,
+              "whi": 1,
+              "not": 1,
+              "fast": 1,
+              "monitor": 1,
+              "turn": 1,
+              "on": 1,
+              "screen": 1,
+              "wo": 1,
+              "display": 1,
+              "black": 1,
+              "yes": 1,
+              "it": 1,
+              "work": 1,
+              "that": 1,
+              "solv": 1,
+              "no": 1,
+              "did": 1,
+              "still": 1
+            },
+            "intents": {
+              "greetings.hello": 1,
+              "greetings.bye": 1,
+              "support.wifi_slow": 1,
+              "problem.monitor": 1,
+              "problem.monitor.yes": 1,
+              "problem.monitor.no": 1
+            },
+            "intentFeatures": {
+              "greetings.hello": {
+                "hoho": 1,
+                "hi": 1,
+                "hey": 1
+              },
+              "greetings.bye": {
+                "bye": 1,
+                "goodby": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1
+              },
+              "support.wifi_slow": {
+                "my": 1,
+                "wifi": 1,
+                "is": 1,
+                "slow": 1,
+                "have": 1,
+                "issu": 1,
+                "with": 1,
+                "internet": 1,
+                "speed": 1,
+                "lag": 1,
+                "whi": 1,
+                "not": 1,
+                "fast": 1
+              },
+              "problem.monitor": {
+                "my": 1,
+                "monitor": 1,
+                "is": 1,
+                "not": 1,
+                "turn": 1,
+                "on": 1,
+                "issu": 1,
+                "screen": 1,
+                "wo": 1,
+                "display": 1,
+                "black": 1
+              },
+              "problem.monitor.yes": {
+                "yes": 1,
+                "it": 1,
+                "work": 1,
+                "that": 1,
+                "solv": 1
+              },
+              "problem.monitor.no": {
+                "no": 1,
+                "it": 1,
+                "did": 1,
+                "not": 1,
+                "work": 1,
+                "still": 1
+              }
+            },
+            "featuresToIntent": {
+              "hoho": [
+                "greetings.hello"
+              ],
+              "hi": [
+                "greetings.hello"
+              ],
+              "hey": [
+                "greetings.hello"
+              ],
+              "bye": [
+                "greetings.bye"
+              ],
+              "goodby": [
+                "greetings.bye"
+              ],
+              "see": [
+                "greetings.bye"
+              ],
+              "you": [
+                "greetings.bye"
+              ],
+              "later": [
+                "greetings.bye"
+              ],
+              "my": [
+                "support.wifi_slow",
+                "problem.monitor"
+              ],
+              "wifi": [
+                "support.wifi_slow"
+              ],
+              "is": [
+                "support.wifi_slow",
+                "problem.monitor"
+              ],
+              "slow": [
+                "support.wifi_slow"
+              ],
+              "have": [
+                "support.wifi_slow"
+              ],
+              "issu": [
+                "support.wifi_slow",
+                "problem.monitor"
+              ],
+              "with": [
+                "support.wifi_slow"
+              ],
+              "internet": [
+                "support.wifi_slow"
+              ],
+              "speed": [
+                "support.wifi_slow"
+              ],
+              "lag": [
+                "support.wifi_slow"
+              ],
+              "whi": [
+                "support.wifi_slow"
+              ],
+              "not": [
+                "support.wifi_slow",
+                "problem.monitor",
+                "problem.monitor.no"
+              ],
+              "fast": [
+                "support.wifi_slow"
+              ],
+              "monitor": [
+                "problem.monitor"
+              ],
+              "turn": [
+                "problem.monitor"
+              ],
+              "on": [
+                "problem.monitor"
+              ],
+              "screen": [
+                "problem.monitor"
+              ],
+              "wo": [
+                "problem.monitor"
+              ],
+              "display": [
+                "problem.monitor"
+              ],
+              "black": [
+                "problem.monitor"
+              ],
+              "yes": [
+                "problem.monitor.yes"
+              ],
+              "it": [
+                "problem.monitor.yes",
+                "problem.monitor.no"
+              ],
+              "work": [
+                "problem.monitor.yes",
+                "problem.monitor.no"
+              ],
+              "that": [
+                "problem.monitor.yes"
+              ],
+              "solv": [
+                "problem.monitor.yes"
+              ],
+              "no": [
+                "problem.monitor.no"
+              ],
+              "did": [
+                "problem.monitor.no"
+              ],
+              "still": [
+                "problem.monitor.no"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hoho",
+                "hi",
+                "hey",
+                "bye",
+                "goodby",
+                "see",
+                "you",
+                "later",
+                "my",
+                "wifi",
+                "is",
+                "slow",
+                "have",
+                "issu",
+                "with",
+                "internet",
+                "speed",
+                "lag",
+                "whi",
+                "not",
+                "fast",
+                "monitor",
+                "turn",
+                "on",
+                "screen",
+                "wo",
+                "display",
+                "black",
+                "yes",
+                "it",
+                "work",
+                "that",
+                "solv",
+                "no",
+                "did",
+                "still"
+              ],
+              "intents": [
+                "greetings.hello",
+                "greetings.bye",
+                "support.wifi_slow",
+                "problem.monitor",
+                "problem.monitor.yes",
+                "problem.monitor.no"
+              ],
+              "perceptrons": [
+                [
+                  10.297272682189941,
+                  10.289224624633789,
+                  10.259711265563965,
+                  -3.8172497749328613,
+                  -3.8024580478668213,
+                  -1.2929496765136719,
+                  -1.2929496765136719,
+                  -1.2929496765136719,
+                  -1.5448468923568726,
+                  -0.5892221331596375,
+                  -1.2529395818710327,
+                  -0.4968194365501404,
+                  -0.26319268345832825,
+                  -2.0421838760375977,
+                  -0.26319268345832825,
+                  -0.6874589323997498,
+                  -0.26319268345832825,
+                  -0.39555156230926514,
+                  -0.05941145867109299,
+                  -1.5565135478973389,
+                  -0.05941145867109299,
+                  -1.8360344171524048,
+                  -0.06748093664646149,
+                  -0.06748093664646149,
+                  -0.8989598155021667,
+                  -0.7167343497276306,
+                  -0.7167343497276306,
+                  -0.18202915787696838,
+                  -3.778524160385132,
+                  -2.1059210300445557,
+                  -1.7660897970199585,
+                  -0.8838765025138855,
+                  -0.8838765025138855,
+                  -3.7577874660491943,
+                  -0.10123293101787567,
+                  -0.5439609885215759,
+                  3.8687796866653406
+                ],
+                [
+                  -2.9385831356048584,
+                  -2.925623655319214,
+                  -2.9121437072753906,
+                  11.124542236328125,
+                  11.110971450805664,
+                  3.7566232681274414,
+                  3.7566232681274414,
+                  3.7566232681274414,
+                  -1.2857424020767212,
+                  -0.4775142967700958,
+                  -0.98944491147995,
+                  -0.37474918365478516,
+                  -0.24781517684459686,
+                  -1.6321213245391846,
+                  -0.24781517684459686,
+                  -0.5701879858970642,
+                  -0.24781517684459686,
+                  -0.2737199068069458,
+                  -0.06609377264976501,
+                  -1.2831250429153442,
+                  -0.06609377264976501,
+                  -1.4251066446304321,
+                  -0.0720241516828537,
+                  -0.0720241516828537,
+                  -0.7035350799560547,
+                  -0.567953884601593,
+                  -0.567953884601593,
+                  -0.11994155496358871,
+                  -2.9699935913085938,
+                  -1.6773717403411865,
+                  -1.3532863855361938,
+                  -0.6999907493591309,
+                  -0.6999907493591309,
+                  -2.957235097885132,
+                  -0.09242375940084457,
+                  -0.3835335075855255,
+                  3.009092465723965
+                ],
+                [
+                  -0.29499492049217224,
+                  -0.29270240664482117,
+                  -0.2912602126598358,
+                  -0.2906036972999573,
+                  -0.2901509702205658,
+                  -0.13682548701763153,
+                  -0.13682548701763153,
+                  -0.13682548701763153,
+                  3.944683313369751,
+                  4.692187309265137,
+                  2.46403169631958,
+                  2.8939642906188965,
+                  1.4806567430496216,
+                  1.0750383138656616,
+                  1.4806567430496216,
+                  4.533420562744141,
+                  1.4806567430496216,
+                  3.0527560710906982,
+                  1.7982033491134644,
+                  -0.7021891474723816,
+                  1.7982033491134644,
+                  -2.3952276706695557,
+                  -1.962375283241272,
+                  -1.962375283241272,
+                  -3.4634037017822266,
+                  -0.15063919126987457,
+                  -0.15063919126987457,
+                  -3.235825538635254,
+                  -0.310234010219574,
+                  -0.37036970257759094,
+                  -0.3425300419330597,
+                  -0.11174145340919495,
+                  -0.11174145340919495,
+                  -0.3009950518608093,
+                  -0.07863175123929977,
+                  -0.0789068415760994,
+                  0.2906431353957816
+                ],
+                [
+                  -0.8379453420639038,
+                  -0.8362497091293335,
+                  -0.8344061374664307,
+                  -0.8324154019355774,
+                  -0.8302788138389587,
+                  -0.3044465482234955,
+                  -0.3044465482234955,
+                  -0.3044465482234955,
+                  0.4201165437698364,
+                  -2.4233415126800537,
+                  1.821873664855957,
+                  -0.9918414950370789,
+                  -1.4014145135879517,
+                  5.4380035400390625,
+                  -1.4014145135879517,
+                  -2.4873971939086914,
+                  -1.4014145135879517,
+                  -1.0717747211456299,
+                  -1.3419817686080933,
+                  0.9182403683662415,
+                  -1.3419817686080933,
+                  7.99094820022583,
+                  1.1516908407211304,
+                  1.1516908407211304,
+                  6.986148357391357,
+                  2.7718253135681152,
+                  2.7718253135681152,
+                  4.214049816131592,
+                  -0.8488613963127136,
+                  -1.1435928344726562,
+                  -1.834387183189392,
+                  -0.23181810975074768,
+                  -0.23181810975074768,
+                  -0.8428120613098145,
+                  -0.550915002822876,
+                  -0.9323750138282776,
+                  0.8382459662274349
+                ],
+                [
+                  -2.031771183013916,
+                  -2.023618221282959,
+                  -2.0151095390319824,
+                  -2.0062527656555176,
+                  -1.9970557689666748,
+                  -0.6863700747489929,
+                  -0.6863700747489929,
+                  -0.6863700747489929,
+                  -0.8515183329582214,
+                  -0.2662557363510132,
+                  -0.6923260688781738,
+                  -0.25292420387268066,
+                  -0.13622164726257324,
+                  -1.1040576696395874,
+                  -0.13622164726257324,
+                  -0.3388718068599701,
+                  -0.13622164726257324,
+                  -0.17967979609966278,
+                  -0.006665738299489021,
+                  -7.126193523406982,
+                  -0.006665738299489021,
+                  -0.9494236707687378,
+                  -0.0022790590301156044,
+                  -0.0022790590301156044,
+                  -0.27560463547706604,
+                  -0.021802162751555443,
+                  -0.021802162751555443,
+                  -0.24148890376091003,
+                  12.04092788696289,
+                  7.382417678833008,
+                  4.352223873138428,
+                  2.442023992538452,
+                  2.442023992538452,
+                  -2.070711135864258,
+                  -6.486098289489746,
+                  -0.5507456064224243,
+                  2.0762212713995893
+                ],
+                [
+                  -1.1659451723098755,
+                  -1.1589866876602173,
+                  -1.1531872749328613,
+                  -1.1475192308425903,
+                  -1.1427608728408813,
+                  -0.41175416111946106,
+                  -0.41175416111946106,
+                  -0.41175416111946106,
+                  -2.3136327266693115,
+                  -1.1370320320129395,
+                  -2.2018420696258545,
+                  -0.07177502661943436,
+                  -0.07315190136432648,
+                  -0.3135990798473358,
+                  -0.07315190136432648,
+                  -0.15046945214271545,
+                  -0.07315190136432648,
+                  -0.04673292487859726,
+                  -1.0311534404754639,
+                  6.623983383178711,
+                  -1.0311534404754639,
+                  -1.2015067338943481,
+                  -0.9964259266853333,
+                  -0.9964259266853333,
+                  -2.555375337600708,
+                  -2.555375337600708,
+                  -2.555375337600708,
+                  0,
+                  -1.1185534000396729,
+                  -2.746001720428467,
+                  2.1744558811187744,
+                  -0.48547154664993286,
+                  -0.48547154664993286,
+                  12.960267066955566,
+                  6.80941104888916,
+                  4.3840107917785645,
+                  1.1186590391717355
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "ar": {
+        "settings": {
+          "locale": "ar",
+          "trainByDomain": false,
+          "tag": "domain-manager-ar",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {},
+        "intentDict": {},
+        "sentences": [],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "ar",
+              "tag": "nlu-ar",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {},
+            "intents": {},
+            "intentFeatures": {},
+            "featuresToIntent": {},
+            "neuralNetwork": {
+              "settings": {
+                "locale": "ar",
+                "tag": "nlu-ar",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "hoho"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "bye"
+      ],
+      [
+        "en",
+        "goodbye"
+      ],
+      [
+        "en",
+        "see you later"
+      ],
+      [
+        "en",
+        "my wifi is slow"
+      ],
+      [
+        "en",
+        "having issues with my internet speed"
+      ],
+      [
+        "en",
+        "my internet is lagging"
+      ],
+      [
+        "en",
+        "why is my wifi not fast?"
+      ],
+      [
+        "en",
+        "My monitor is not turning on"
+      ],
+      [
+        "en",
+        "Monitor issues"
+      ],
+      [
+        "en",
+        "Screen won't display"
+      ],
+      [
+        "en",
+        "My screen is black"
+      ],
+      [
+        "en",
+        "Yes"
+      ],
+      [
+        "en",
+        "It worked"
+      ],
+      [
+        "en",
+        "That solved it"
+      ],
+      [
+        "en",
+        "No"
+      ],
+      [
+        "en",
+        "It didn't work"
+      ],
+      [
+        "en",
+        "Still not working"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greetings.hello": [
+          {
+            "answer": "Hey there!"
+          },
+          {
+            "answer": "hoho there!"
+          },
+          {
+            "answer": "Hello!"
+          },
+          {
+            "answer": "Hi, how can I help you?"
+          }
+        ],
+        "greetings.bye": [
+          {
+            "answer": "Goodbye!"
+          },
+          {
+            "answer": "See you later!"
+          },
+          {
+            "answer": "Bye! Have a great day."
+          }
+        ],
+        "support.wifi_slow": [
+          {
+            "answer": "Let's try to troubleshoot your WiFi issue. Can you check if there are any other devices currently using the network?"
+          },
+          {
+            "answer": "Slow WiFi can be caused by various factors. Please check if your router is placed in an open space and not behind any obstacles."
+          },
+          {
+            "answer": "To improve your WiFi speed, try restarting your router and check if the issue persists."
+          }
+        ],
+        "problem.monitor": [
+          {
+            "answer": "Have you tried checking the power cables or trying a different power outlet?"
+          }
+        ],
+        "problem.monitor.yes": [
+          {
+            "answer": "Great to hear that! Do you need help with anything else?"
+          }
+        ],
+        "problem.monitor.no": [
+          {
+            "answer": "It might working try turning it on by remote on button on screen. Or it might be a hardware issue. Please check if your monitor is under warranty or consider taking it to a service center."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

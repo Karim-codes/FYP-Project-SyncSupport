@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Websockets</title>
+    <link href="chat.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"
+        integrity="sha512-Xm9qbB6Pu06k3PUwPj785dyTl6oHxgsv9nHp7ej7nCpAqGZT3OZpsELuCYX05DdonFpTlBpXMOxjavIAIUwr0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="chat-window">
+            <ul class="chat-messages"></ul>
+        </div>
+        <form class="message-form">
+            <input type="text" id="user-message" placeholder="Your message" autocomplete="off">
+            <button type="button" id="send-button">Send</button>
+        </form>
+    </div>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat-Service</title>
+    <link rel="stylesheet" href="chat.css">
+    
+    
+</head>
+
+<body>
+    
+
+    <div class="navbar">
+        <a href="home.html"> <div class="logo">SyncSupport.</div> </a>
+        <div class="navbar-left">
+            <a class="hvr" href="home.html">Home</a>
+            <a class="hvr" href="aboutUs.html">About Us</a>
+        </div>
+    </div>
+
+    <main>
+        
+        <form class="form-join">
+            <input  type="text" id="name" maxlength="8" placeholder="Your name" size="2" required>
+            <input  type="text" id="room" placeholder="Chat room" size="2" required>
+            <button id="join" type="submit">Join</button>
+        </form> 
+
+        <div class="chatarea">
+            <ul class="chat-display"></ul>
+
+            <p class="user-list"></p>
+
+            <p class="room-list"></p>
+
+            <p class="activity"></p>
+
+            <form class="form-msg">
+                <input type="text" id="message" placeholder="Your message" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        
+    </main>
+
+</body>
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+<script src="app.js"></script>
+
+</html>
+

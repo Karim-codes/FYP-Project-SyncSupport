@@ -1,0 +1,342 @@
+/* * {
+    font-size: 1.5rem;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 1rem;
+}
+
+.chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.chat-window {
+    background-color: #444;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.chat-messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.chat-messages li {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.chat-messages li:nth-child(odd) {
+    background-color: #555;
+    border-radius: 10px 10px 10px 0;
+}
+
+.chat-messages li:nth-child(even) {
+    background-color: #666;
+    border-radius: 10px 10px 0 10px;
+}
+
+form.message-form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+input#user-message {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #777;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+button#send-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button#send-button:hover {
+    background-color: #0056b3;
+}
+ */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #c49cf8, #05ed1c, #0cc512, #8003ed);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 5s ease infinite;
+    color: #333;
+}
+
+@keyframes backgroundAnimation {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Keep all other CSS styles as they were */
+
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+}
+.logo{
+    font-size: larger;
+    text-decoration: none;
+}
+
+.navbar .logo, .navbar-left a {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-left {
+    display: flex;
+}
+
+.hvr {
+    background-color: #000000;
+    border: none;
+    border-radius: 15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+  
+.hvr:hover {
+    background-color: #814dc8;
+}
+  
+.hvr:active {
+    background-color: #6240b0;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    padding: 1rem;
+    display: flex; /* Use flex instead of block to center children */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    flex-direction: row;
+}
+
+form {
+    width: 40%; /* Adjust width to your preference */
+    max-width: 400px; /* Set a maximum width */
+    /* display: flex; */
+    /* flex-flow: column;
+    justify-content: space-between; */
+    gap: .25rem;
+}
+
+.form-join {
+    width: 100%;
+    max-width: 300px; /* Adjust width to your preference */
+    margin-top: 1rem; /* Add some top margin */
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5rem;
+    position: absolute;
+  top: 50; /* Adjust as needed */
+  left: 50%; /* Center the form */
+  transform: translateX(-50%); /* Center the form */
+  z-index: 10; /* Ensure it's above other content */
+}
+
+.form-join input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+#name {
+    max-width: 100px; /* Adjust maximum width to your preference */
+}
+
+#room {
+    max-width: 150px; /* Adjust maximum width to your preference */
+}
+
+button#join {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#join:hover {
+    background-color: #45a049;
+}
+
+
+input {
+    flex-grow: 1;
+    max-width: calc(80% - .25rem);
+}
+
+button {
+    width: 20%;
+}
+
+input,
+button {
+    border-radius: 10px;
+    padding: .5rem;
+}
+
+
+.chatarea{
+    background-color: #f9f7f7;
+    list-style-type: none;
+    width: 100%;
+    height: 580px;
+    max-width: 400px;
+    border-radius: 10px;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    scroll-behavior: auto;
+    
+}
+
+.chat-display {
+    display: flex;
+    flex-flow: column;
+    overflow-y: auto;
+    height: 100%;
+    max-height: 500px;
+}
+
+
+.post {
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 0 0 .25rem;
+    margin: .5rem;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.post--left {
+    width: 60%;
+    align-self: flex-start;
+}
+
+.post--right {
+    width: 60%;
+    align-self: flex-end;
+}
+
+.post__header {
+    color: #100d0d;
+    padding: .25rem .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+}
+
+.post__header--user {
+    background-color: rgb(225, 18, 74);
+}
+
+.post__header--reply {
+    background-color: rgb(0, 128, 11);
+}
+
+.post__header--name {
+    font-weight: 500px;
+}
+
+.post__header--time {
+    font-size: .9rem;
+}
+
+.post__text {
+    margin-top: 5px;
+    color: #333;
+    padding: .25rem .5rem;
+}
+
+.user-list,.room-list,.activity {
+    color: #000;
+    width: 1000%;
+    min-height: 2.65rem;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: .75rem .25rem;
+}
+
+.activity {
+    font-style: italic;
+}
+
+.form-msg {
+    width: 100%;
+    max-width: 300px; /* Adjust width to your preference */
+    /* margin-top: 4rem; Add some top margin */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: baseline;
+    gap: 0.5rem;
+}
+
+#message {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #555;
+    border-radius: 5px;
+    margin-left: 40px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
