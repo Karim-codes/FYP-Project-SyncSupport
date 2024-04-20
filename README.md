@@ -13,7 +13,7 @@ This platform tackles common IT issues with automated responses and offers a str
 
 ## Tech Stack
 - **HTML & CSS**
-- **Bosstrap**
+- **Boostrap**
 - **JavaScript**
 - **Node.js**
 - **Express.js**
