@@ -1,0 +1,59 @@
+/* Welcome.scss */
+.welcome-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 80vh;
+  /* Full viewport height */
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  /* Light background color */
+}
+
+.welcome-container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #333;
+  /* Dark text color */
+}
+
+.welcome-container img {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  /* Optional: adds rounded corners to the image */
+}
+
+.welcome-container p {
+  font-size: 1.25rem;
+  color: #666;
+  /* Gray text color */
+  margin-bottom: 20px;
+}
+
+.welcome-container .button-container .get-started-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.welcome-container .button-container .get-started-btn:hover {
+  background-color: #0056b3;
+}
+/*# sourceMappingURL=Welcome.css.map */

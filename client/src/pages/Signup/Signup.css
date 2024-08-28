@@ -1,0 +1,112 @@
+.signup-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70vh;
+  background: white;
+}
+
+.signup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ffffff;
+  /* White background for the form container */
+  padding: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 100%;
+}
+
+h1 {
+  color: #4CAF50;
+  /* Green color */
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+.btn {
+  padding: 15px;
+  border: 1px solid #ccc;
+  /* Subtle border */
+  border-radius: 25px;
+  margin: 5px 0;
+  width: calc(100% - 30px);
+}
+
+input[type="text"],
+input[type="password"] {
+  background-color: #eee;
+  /* Lighter background for inputs */
+}
+
+.btn {
+  background-color: #4CAF50;
+  /* Green background for button */
+  color: white;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+p {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 1em;
+}
+
+a {
+  color: #4CAF50;
+  /* Green color for links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=Signup.css.map */

@@ -1,0 +1,42 @@
+.home {
+  margin-top: 300px;
+  text-align: center;
+  padding: 20px;
+}
+
+.home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.home .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+
+.home .button-container .get-started-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.home .button-container .get-started-btn:hover {
+  background-color: #0056b3;
+}
+/*# sourceMappingURL=Home.css.map */
