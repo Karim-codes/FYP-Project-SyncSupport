@@ -123,20 +123,20 @@ body {
     background-color: #4ec850;
 }
 
-.quick-reply-buttons {
+.quick-question-buttons {
     margin-top: 0px;
     text-align: center;
 }
 
-.quick-reply-buttons {
+.quick-question-buttons {
     display: flex;
-    justify-content: center; /* Center the buttons container */
+    justify-content: center; 
     padding: 10px;
-    gap: 10px; /* Space between buttons */
+    gap: 10px; 
     background: #f0f0f0;
 }
 
-.quick-reply-btn {
+.quick-question-btn {
     background-color: #007bff;
     color: white;
     border: none;
@@ -146,10 +146,10 @@ body {
     transition: background-color 0.3s;
 }
 
-.quick-reply-btn:hover {
+.quick-question-btn:hover {
     background-color: #0056b3;
 }
-.quick-reply-btn:hover {
+.quick-question-btn:hover {
     background-color: #0056b3;
 }
 
@@ -162,16 +162,16 @@ body {
 
 .popup {
     position: fixed;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust to exact center */
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     width: 80%;
-    max-width: 400px; /* Adjust width as necessary */
+    max-width: 400px;
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1000; 
 }
 
 .popup-content {
@@ -187,8 +187,8 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 1.25rem; /* Smaller close button */
-    color: #aaa; /* Less intrusive color */
+    font-size: 1.25rem; 
+    color: #aaa; 
     cursor: pointer;
 }
 
@@ -197,14 +197,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Adjust height as necessary */
+    height: 100vh; 
 }
 
 .real-agent-button {
     position: absolute;
-    right: 5px; /* Adjust based on your layout's needs */
+    right: 5px; 
     top: 50%;
-    transform: translateY(-50%); /* Center vertically relative to the container */
+    transform: translateY(-50%); 
     background-color: #4CAF50;
     color: white;
     border: none;

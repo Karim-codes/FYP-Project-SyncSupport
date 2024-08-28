@@ -2,12 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const chatMessages = document.getElementById("chat-messages");
     const userMessageInput = document.getElementById("user-message");
     const sendButton = document.getElementById("send-button");
-    const quickReplyButtons = document.querySelectorAll('.quick-reply-btn');
+    const quickquestionButtons = document.querySelectorAll('.quick-question-btn');
 
-    // Display the popup when the page loads
+   
     document.getElementById("popup").style.display = "block";
 
-    // Function to close the popup
     window.closePopup = function () {
         document.getElementById("popup").style.display = "none";
     };
@@ -17,11 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (userMessage !== "") {
             displayMessage("User", userMessage);
             sendToChatbot(userMessage);
-            userMessageInput.value = ""; // Clear the input field
+            userMessageInput.value = "";
         }
-    });
+    })
 
-    quickReplyButtons.forEach(button => {
+    quickquestionButtons.forEach(button => {
         button.addEventListener('click', function() {
             const message = this.getAttribute('data-message');
             displayMessage("User", message);
@@ -41,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             removeBotThinking();
             displayMessage("Agent-AI", data.message);
-            chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         })
         .catch(error => {
             console.error('Error:', error);

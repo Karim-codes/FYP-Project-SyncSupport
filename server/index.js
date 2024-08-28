@@ -1,17 +1,19 @@
 import express from 'express'
 import { Server } from "socket.io"
-import path from 'path'
-import { fileURLToPath } from 'url'
 import { NlpManager } from 'node-nlp';
 import bodyParser from 'body-parser';
+import path from 'path'
+import { fileURLToPath } from 'url'
 import bcrypt from "bcrypt";
 import mongodb from 'mongodb';
 
 const { MongoClient } = mongodb;
-const manager = new NlpManager({ languages: ['en', 'ar'], forceNER: true });
+
+const manager = new NlpManager({ languages: ['en'], forceNER: true });
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -26,7 +28,7 @@ app.use(express.static(path.join(__dirname, "../frontend/public")));
 app.use(express.json());
 
 const uri = "mongodb+srv://dbkarim:Miirak17@cluster0.os5qpdf.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const client = new MongoClient(uri);
 
 const dbName = 'Cluster0';
 const collectionName = 'chatbotData';  
@@ -35,29 +37,54 @@ async function insertChatbotData() {
     const database = client.db(dbName);
     const collection = database.collection(collectionName);
 
-    // Define the intents to be inserted
-    const intents = [
-        {
-            "intent": "problem.monitor",
-            "language": "en",
-            "phrases": ["My monitor is not turning on", "Monitor issues", "Screen won't display", "My screen is black"],
-            "responses": ["Have you tried checking the power cables or trying a different power outlet?"]
-        },
-        {
-            "intent": "problem.monitor.yes",
-            "language": "en",
-            "phrases": ["Yes", "It worked", "That solved it"],
-            "responses": ["Great to hear that! Do you need help with anything else?"]
-        },
-        {
-            "intent": "problem.monitor.no",
-            "language": "en",
-            "phrases": ["No", "It didn't work", "Still not working"],
-            "responses": ["It might working try turning it on by remote on button on screen. Or it might be a hardware issue. Please check if your monitor is under warranty or consider taking it to a service center."]
-        }
-    ];
+    //intents inserted
+     const intents = [
+    //     {
+    //         "intent": "problem.monitor",
+    //         "language": "en",
+    //         "phrases": ["My monitor is not turning on", "Monitor issues", "Screen won't display", "My screen is black"],
+    //         "responses": ["Have you tried checking the power cables or trying a different power outlet?"]
+    //     },
+    //     {
+    //         "intent": "problem.monitor.yes",
+    //         "language": "en",
+    //         "phrases": ["Yes", "It worked", "That solved it"],
+    //         "responses": ["Great to hear that! Do you need help with anything else?"]
+    //     },
+    //     {
+    //         "intent": "problem.monitor.no",
+    //         "language": "en",
+    //         "phrases": ["No", "It didn't work", "Still not working"],
+    //         "responses": ["It might working try turning it on by remote on button on screen. Or it might be a hardware issue. Please check if your monitor is under warranty or consider taking it to a service center."]
+    //     }
+     ];
+    //const intents = [
+         {
+        //     "intent": "how.to.print",
+        //     "language": "en",
+        //     "phrases": ["how to print", "how can I print"],
+        //     "responses": ["Are you printing through Word or PDF"]
+        // },
+        // {
+        //     "intent": "how.to.print.Word",
+        //     "language": "en",
+        //     "phrases": ["Word", "word"],
+        //     "responses": ["Okay perfect! On your Word document, click File, then choose 'Print' then adjust paper size and orientation. If the document is correct press 'Print' !"]
+        // },
+        // {
+        //     "intent": "how.to.print.PDF",
+        //     "language": "en",
+        //     "phrases": ["PDF", "pdf"],
+        //     "responses": ["Okay perfect! On your PDF file, click File, then choose 'Print' then adjust paper size and orientation. If the file is correct, press 'Print' !"]
+        // },
+        // {
+        //     "intent": "how.to.print.worked",
+        //     "language": "en",
+        //     "phrases": ["worked", "working", "all working"],
+        //     "responses": ["Ayyy, glad to hear that! Anything I can help with?."]
+         }
+   //];
 
-    // Iterate through each intent and insert it into the database if it doesn't already exist
     for (let intentData of intents) {
         const { intent, language } = intentData;
         const existingIntent = await collection.findOne({ intent, language });
@@ -70,27 +97,18 @@ async function insertChatbotData() {
     }
 }
 
-
 async function loadTrainingData() {
     try {
         const database = client.db(dbName);
         const collection = database.collection(collectionName);
         const documents = await collection.find().toArray();
 
-        if (documents.length === 0) {
-            console.log("No documents found in MongoDB collection.");
-            return;
-        }
-
-        // Loop through each document and add the phrases and responses to the manager
         for (let doc of documents) {
             if (doc.phrases && doc.responses) {
                 doc.phrases.forEach(phrase => manager.addDocument(doc.language, phrase, doc.intent));
                 doc.responses.forEach(response => manager.addAnswer(doc.language, doc.intent, response));
             }
         }
-        
-        console.log("Training data loaded from MongoDB.");
         await manager.train();
         manager.save();
         console.log("NLP model trained and saved.");
@@ -110,6 +128,7 @@ async function loadTrainingData() {
     }
 })();
 
+
 app.post('/chat', async (req, res) => {
     const userMessage = req.body.message;
     try {
@@ -124,56 +143,59 @@ app.post('/chat', async (req, res) => {
 
 
 
-
-//pages
-
-//pages
-
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/public/index.html"));
 });
 
-app.get("/home.html", (req, res) => {
+app.get("/home", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/public/home.html"));
+});
+
+app.get("/aboutUs", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/public/aboutUs.html"));
 });
 
 app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/public/Login.html"));
 });
 
-
 app.get("/signup", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend/public/signup.html"));
+});
+
+app.get("/chatbot", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/public/chatbot.html"));
+});
+
+app.get("/real-user", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/public/chat-real-user.html"));
 });
 
 
 
 
 
-// Handle user signup 
+
 app.post("/signup", async (req, res) => {
     const { userName, password } = req.body;
-
     try {
         const db = client.db("Cluster0");
         const usersCollection = db.collection("users_accounts");
-
-        // Check if the username already exists in the database
+        
         const existingUser = await usersCollection.findOne({ userName });
         if (existingUser) {
             return res.send("Username already exists. Please choose another one.");
         }
-
-        // Insert the new user into the database with plain text password
+        
         await usersCollection.insertOne({ userName, password });
 
-        res.redirect("/login.html"); // Redirect to login page after successful signup
+        res.redirect("/login.html");
+        console.log("user " + userName + " signed up in succesfully")
     } catch (error) {
         console.error("Error signing up:", error);
         res.status(500).send("Error signing up. Please try again later.");
     }
 });
-
 
 app.post("/login", async (req, res) => {
     const { userName, password } = req.body;
@@ -182,18 +204,17 @@ app.post("/login", async (req, res) => {
         const db = client.db("Cluster0");
         const usersCollection = db.collection("users_accounts");
 
-        // Find the user by username
         const user = await usersCollection.findOne({ userName });
         if (!user) {
             return res.send("User not found. Please check your username and try again.");
         }
 
-        // Compare passwords
         if (password !== user.password) {
             return res.send("Incorrect password. Please try again.");
         }
 
-        // Redirect to the home page or a dashboard after successful login
+        
+        console.log("user " + userName + " logged in succesfully")
         res.redirect("home.html");
     } catch (error) {
         console.error("Error logging in:", error);
@@ -213,19 +234,20 @@ app.get("/logout", (req, res) => {
 
 const io = new Server(expressServer, {
     cors: {
-        origin: process.env.NODE_ENV === "production" ? false : ["http://localhost:3000", "http://127.0.0.1:5500"]
+        origin: process.env.NODE_ENV === "port 3000" ? false : 
+        ["http://localhost:3000",]
     }
 })
 
 io.on('connection', socket => {
     console.log(`User ${socket.id} connected`)
 
-    // Upon connection - only to user 
+    
     socket.emit('message', buildMsg(ADMIN, "Welcome to SyncSupport Chat Service!"))
 
     socket.on('enterRoom', ({ name, room }) => {
 
-        // leave previous room 
+      
         const prevRoom = getUser(socket.id)?.room
 
         if (prevRoom) {
@@ -235,34 +257,27 @@ io.on('connection', socket => {
 
         const user = activateUser(socket.id, name, room)
 
-        // Cannot update previous room users list until after the state update in activate user 
         if (prevRoom) {
             io.to(prevRoom).emit('userList', {
                 users: getUsersInRoom(prevRoom)
             })
         }
 
-        // join room 
         socket.join(user.room)
 
-        // To user who joined 
         socket.emit('message', buildMsg(ADMIN, `You have joined the ${user.room} chat room`))
 
-        // To everyone else 
         socket.broadcast.to(user.room).emit('message', buildMsg(ADMIN, `${user.name} has joined the room`))
-
-        // Update user list for room 
+    
         io.to(user.room).emit('userList', {
             users: getUsersInRoom(user.room)
         })
 
-        // Update rooms list for everyone 
         io.emit('roomList', {
             rooms: getAllActiveRooms()
         })
     })
 
-    // When user disconnects - to all others 
     socket.on('disconnect', () => {
         const user = getUser(socket.id)
         userLeavesApp(socket.id)
@@ -282,15 +297,32 @@ io.on('connection', socket => {
         console.log(`User ${socket.id} disconnected`)
     })
 
-    // Listening for a message event 
     socket.on('message', ({ name, text }) => {
         const room = getUser(socket.id)?.room
         if (room) {
             io.to(room).emit('message', buildMsg(name, text))
         }
+        saveChatMessage({ room, name, text });
     })
 
-    // Listen for activity 
+    async function saveChatMessage({ room, name, text }) {
+        try {
+            const db = client.db("Cluster0");
+            const chatMessagesCollection = db.collection("chat_messages");
+    
+            const messageDocument = {
+                room,name,text,
+                timestamp: new Date()
+            };
+    
+            await chatMessagesCollection.insertOne(messageDocument);
+            console.log("Chat message saved to database.");
+        } catch (error) {
+            console.error("Failed to save chat message:", error);
+        }
+    }
+    
+
     socket.on('activity', (name) => {
         const room = getUser(socket.id)?.room
         if (room) {
@@ -319,7 +351,7 @@ const UsersState = {
   };
   
 
-// User functions 
+
 function activateUser(id, name, room) {
     const user = { id, name, room }
     UsersState.setUsers([
@@ -347,12 +379,7 @@ function getAllActiveRooms() {
     return Array.from(new Set(UsersState.users.map(user => user.room)))
 }
 
-
-
-
-
-
-
+export default app;
 
 
 

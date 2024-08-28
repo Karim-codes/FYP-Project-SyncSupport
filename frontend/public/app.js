@@ -1,31 +1,3 @@
-// const socket = io('ws://localhost:3000')
-
-// function sendMessage(e) {
-//     e.preventDefault()
-//     const input = document.querySelector('input')
-//     if (input.value) {
-//         socket.emit('message', input.value)
-//         input.value = ""
-//     }
-//     input.focus()
-// }
-
-// document.querySelector('form')
-//     .addEventListener('submit', sendMessage)
-
-// // Listen for messages 
-// socket.on("message", (data) => {
-//     const li = document.createElement('li')
-//     li.textContent = data
-//     document.querySelector('ul').appendChild(li)
-// })
-
-
-
-
-
-
-
 const socket = io('ws://localhost:3000')
 
 
@@ -41,8 +13,7 @@ function sendMessage(e) {
     e.preventDefault()
     if (nameInput.value && msgInput.value && chatRoom.value) {
         socket.emit('message', {
-            name: nameInput.value,
-            text: msgInput.value
+            name: nameInput.value, text: msgInput.value
         })
         msgInput.value = ""
     }

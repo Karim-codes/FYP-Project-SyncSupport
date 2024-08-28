@@ -1,0 +1,1070 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hi": {
+            "intent": "greetings",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greetings",
+            "domain": "default"
+          },
+          "are,how,you": {
+            "intent": "greetings",
+            "domain": "default"
+          },
+          "bye": {
+            "intent": "goodbye",
+            "domain": "default"
+          },
+          "goodby": {
+            "intent": "goodbye",
+            "domain": "default"
+          },
+          "later,see,you": {
+            "intent": "goodbye",
+            "domain": "default"
+          },
+          "is,monitor,my,not,work": {
+            "intent": "monitor_issue",
+            "domain": "default"
+          },
+          "blank,is,screen,the": {
+            "intent": "monitor_issue",
+            "domain": "default"
+          },
+          "anyth,ca,i,monitor,my,not,on,see": {
+            "intent": "monitor_issue",
+            "domain": "default"
+          },
+          "is,my,not,print,printer": {
+            "intent": "printer_issue",
+            "domain": "default"
+          },
+          "an,error,give,is,printer,the": {
+            "intent": "printer_issue",
+            "domain": "default"
+          },
+          "ca,document,i,not,print": {
+            "intent": "printer_issue",
+            "domain": "default"
+          },
+          "ca,connect,i,internet,not,the,to": {
+            "intent": "network_issue",
+            "domain": "default"
+          },
+          "is,my,not,wi-fi,work": {
+            "intent": "network_issue",
+            "domain": "default"
+          },
+          "do,fix,how,i,issu,network": {
+            "intent": "network_issue",
+            "domain": "default"
+          },
+          "crash,is,softwar,the": {
+            "intent": "software_issue",
+            "domain": "default"
+          },
+          "an,applic,have,i,troubl,with": {
+            "intent": "software_issue",
+            "domain": "default"
+          },
+          "do,how,i,softwar,the,updat": {
+            "intent": "software_issue",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings": "default",
+          "goodbye": "default",
+          "monitor_issue": "default",
+          "printer_issue": "default",
+          "network_issue": "default",
+          "software_issue": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greetings"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greetings"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are you",
+            "intent": "greetings"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye",
+            "intent": "goodbye"
+          },
+          {
+            "domain": "default",
+            "utterance": "goodbye",
+            "intent": "goodbye"
+          },
+          {
+            "domain": "default",
+            "utterance": "see you later",
+            "intent": "goodbye"
+          },
+          {
+            "domain": "default",
+            "utterance": "My monitor is not working",
+            "intent": "monitor_issue"
+          },
+          {
+            "domain": "default",
+            "utterance": "The screen is blank",
+            "intent": "monitor_issue"
+          },
+          {
+            "domain": "default",
+            "utterance": "I can't see anything on my monitor",
+            "intent": "monitor_issue"
+          },
+          {
+            "domain": "default",
+            "utterance": "My printer is not printing",
+            "intent": "printer_issue"
+          },
+          {
+            "domain": "default",
+            "utterance": "The printer is giving an error",
+            "intent": "printer_issue"
+          },
+          {
+            "domain": "default",
+            "utterance": "I can't print documents",
+            "intent": "printer_issue"
+          },
+          {
+            "domain": "default",
+            "utterance": "I can't connect to the internet",
+            "intent": "network_issue"
+          },
+          {
+            "domain": "default",
+            "utterance": "My Wi-Fi is not working",
+            "intent": "network_issue"
+          },
+          {
+            "domain": "default",
+            "utterance": "How do I fix network issues?",
+            "intent": "network_issue"
+          },
+          {
+            "domain": "default",
+            "utterance": "The software is crashing",
+            "intent": "software_issue"
+          },
+          {
+            "domain": "default",
+            "utterance": "I have trouble with an application",
+            "intent": "software_issue"
+          },
+          {
+            "domain": "default",
+            "utterance": "How do I update the software?",
+            "intent": "software_issue"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hi": 1,
+              "hello": 1,
+              "how": 1,
+              "are": 1,
+              "you": 1,
+              "bye": 1,
+              "goodby": 1,
+              "see": 1,
+              "later": 1,
+              "my": 1,
+              "monitor": 1,
+              "is": 1,
+              "not": 1,
+              "work": 1,
+              "the": 1,
+              "screen": 1,
+              "blank": 1,
+              "i": 1,
+              "ca": 1,
+              "anyth": 1,
+              "on": 1,
+              "printer": 1,
+              "print": 1,
+              "give": 1,
+              "an": 1,
+              "error": 1,
+              "document": 1,
+              "connect": 1,
+              "to": 1,
+              "internet": 1,
+              "wi-fi": 1,
+              "do": 1,
+              "fix": 1,
+              "network": 1,
+              "issu": 1,
+              "softwar": 1,
+              "crash": 1,
+              "have": 1,
+              "troubl": 1,
+              "with": 1,
+              "applic": 1,
+              "updat": 1
+            },
+            "intents": {
+              "greetings": 1,
+              "goodbye": 1,
+              "monitor_issue": 1,
+              "printer_issue": 1,
+              "network_issue": 1,
+              "software_issue": 1
+            },
+            "intentFeatures": {
+              "greetings": {
+                "hi": 1,
+                "hello": 1,
+                "how": 1,
+                "are": 1,
+                "you": 1
+              },
+              "goodbye": {
+                "bye": 1,
+                "goodby": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1
+              },
+              "monitor_issue": {
+                "my": 1,
+                "monitor": 1,
+                "is": 1,
+                "not": 1,
+                "work": 1,
+                "the": 1,
+                "screen": 1,
+                "blank": 1,
+                "i": 1,
+                "ca": 1,
+                "see": 1,
+                "anyth": 1,
+                "on": 1
+              },
+              "printer_issue": {
+                "my": 1,
+                "printer": 1,
+                "is": 1,
+                "not": 1,
+                "print": 1,
+                "the": 1,
+                "give": 1,
+                "an": 1,
+                "error": 1,
+                "i": 1,
+                "ca": 1,
+                "document": 1
+              },
+              "network_issue": {
+                "i": 1,
+                "ca": 1,
+                "not": 1,
+                "connect": 1,
+                "to": 1,
+                "the": 1,
+                "internet": 1,
+                "my": 1,
+                "wi-fi": 1,
+                "is": 1,
+                "work": 1,
+                "how": 1,
+                "do": 1,
+                "fix": 1,
+                "network": 1,
+                "issu": 1
+              },
+              "software_issue": {
+                "the": 1,
+                "softwar": 1,
+                "is": 1,
+                "crash": 1,
+                "i": 1,
+                "have": 1,
+                "troubl": 1,
+                "with": 1,
+                "an": 1,
+                "applic": 1,
+                "how": 1,
+                "do": 1,
+                "updat": 1
+              }
+            },
+            "featuresToIntent": {
+              "hi": [
+                "greetings"
+              ],
+              "hello": [
+                "greetings"
+              ],
+              "how": [
+                "greetings",
+                "network_issue",
+                "software_issue"
+              ],
+              "are": [
+                "greetings"
+              ],
+              "you": [
+                "greetings",
+                "goodbye"
+              ],
+              "bye": [
+                "goodbye"
+              ],
+              "goodby": [
+                "goodbye"
+              ],
+              "see": [
+                "goodbye",
+                "monitor_issue"
+              ],
+              "later": [
+                "goodbye"
+              ],
+              "my": [
+                "monitor_issue",
+                "printer_issue",
+                "network_issue"
+              ],
+              "monitor": [
+                "monitor_issue"
+              ],
+              "is": [
+                "monitor_issue",
+                "printer_issue",
+                "network_issue",
+                "software_issue"
+              ],
+              "not": [
+                "monitor_issue",
+                "printer_issue",
+                "network_issue"
+              ],
+              "work": [
+                "monitor_issue",
+                "network_issue"
+              ],
+              "the": [
+                "monitor_issue",
+                "printer_issue",
+                "network_issue",
+                "software_issue"
+              ],
+              "screen": [
+                "monitor_issue"
+              ],
+              "blank": [
+                "monitor_issue"
+              ],
+              "i": [
+                "monitor_issue",
+                "printer_issue",
+                "network_issue",
+                "software_issue"
+              ],
+              "ca": [
+                "monitor_issue",
+                "printer_issue",
+                "network_issue"
+              ],
+              "anyth": [
+                "monitor_issue"
+              ],
+              "on": [
+                "monitor_issue"
+              ],
+              "printer": [
+                "printer_issue"
+              ],
+              "print": [
+                "printer_issue"
+              ],
+              "give": [
+                "printer_issue"
+              ],
+              "an": [
+                "printer_issue",
+                "software_issue"
+              ],
+              "error": [
+                "printer_issue"
+              ],
+              "document": [
+                "printer_issue"
+              ],
+              "connect": [
+                "network_issue"
+              ],
+              "to": [
+                "network_issue"
+              ],
+              "internet": [
+                "network_issue"
+              ],
+              "wi-fi": [
+                "network_issue"
+              ],
+              "do": [
+                "network_issue",
+                "software_issue"
+              ],
+              "fix": [
+                "network_issue"
+              ],
+              "network": [
+                "network_issue"
+              ],
+              "issu": [
+                "network_issue"
+              ],
+              "softwar": [
+                "software_issue"
+              ],
+              "crash": [
+                "software_issue"
+              ],
+              "have": [
+                "software_issue"
+              ],
+              "troubl": [
+                "software_issue"
+              ],
+              "with": [
+                "software_issue"
+              ],
+              "applic": [
+                "software_issue"
+              ],
+              "updat": [
+                "software_issue"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hi",
+                "hello",
+                "how",
+                "are",
+                "you",
+                "bye",
+                "goodby",
+                "see",
+                "later",
+                "my",
+                "monitor",
+                "is",
+                "not",
+                "work",
+                "the",
+                "screen",
+                "blank",
+                "i",
+                "ca",
+                "anyth",
+                "on",
+                "printer",
+                "print",
+                "give",
+                "an",
+                "error",
+                "document",
+                "connect",
+                "to",
+                "internet",
+                "wi-fi",
+                "do",
+                "fix",
+                "network",
+                "issu",
+                "softwar",
+                "crash",
+                "have",
+                "troubl",
+                "with",
+                "applic",
+                "updat"
+              ],
+              "intents": [
+                "greetings",
+                "goodbye",
+                "monitor_issue",
+                "printer_issue",
+                "network_issue",
+                "software_issue"
+              ],
+              "perceptrons": [
+                [
+                  9.639928817749023,
+                  9.637685775756836,
+                  3.1201653480529785,
+                  4.90653133392334,
+                  1.8477801084518433,
+                  -4.157590389251709,
+                  -4.124581336975098,
+                  -3.145519733428955,
+                  -3.0594215393066406,
+                  -0.8517612218856812,
+                  -0.37221387028694153,
+                  -1.6558517217636108,
+                  -1.0758057832717896,
+                  -0.5376880168914795,
+                  -1.6457375288009644,
+                  -0.5343103408813477,
+                  -0.5343103408813477,
+                  -2.450510025024414,
+                  -0.29429829120635986,
+                  -0.05891501158475876,
+                  -0.05891501158475876,
+                  -0.38724902272224426,
+                  -0.40039312839508057,
+                  -0.13554976880550385,
+                  -0.511545717716217,
+                  -0.13554976880550385,
+                  -0.15536154806613922,
+                  -0.0342295877635479,
+                  -0.0342295877635479,
+                  -0.0342295877635479,
+                  -0.24832095205783844,
+                  -1.7880573272705078,
+                  -1.083594560623169,
+                  -1.083594560623169,
+                  -1.083594560623169,
+                  -0.9002025723457336,
+                  -0.1944834291934967,
+                  -0.35208606719970703,
+                  -0.35208606719970703,
+                  -0.35208606719970703,
+                  -0.35208606719970703,
+                  -0.7040261030197144,
+                  4.370503721885781
+                ],
+                [
+                  -4.176815032958984,
+                  -4.140514850616455,
+                  -3.1970465183258057,
+                  -2.8596701622009277,
+                  1.6467907428741455,
+                  9.582504272460938,
+                  9.580398559570312,
+                  3.672086715698242,
+                  4.507096767425537,
+                  -1.1828734874725342,
+                  -1.067126989364624,
+                  -1.7657116651535034,
+                  -1.3584548234939575,
+                  -0.23154762387275696,
+                  -1.500806450843811,
+                  -0.6058409214019775,
+                  -0.6058409214019775,
+                  -1.8280580043792725,
+                  -1.0115476846694946,
+                  -0.8359665870666504,
+                  -0.8359665870666504,
+                  -0.31689295172691345,
+                  -0.23284047842025757,
+                  -0.21280933916568756,
+                  -0.7184876799583435,
+                  -0.21280933916568756,
+                  -0.12992575764656067,
+                  -0.02426568605005741,
+                  -0.02426568605005741,
+                  -0.02426568605005741,
+                  -0.011483129113912582,
+                  -0.30815252661705017,
+                  -0.2574855387210846,
+                  -0.2574855387210846,
+                  -0.2574855387210846,
+                  -0.6202895045280457,
+                  -0.5724328756332397,
+                  -0.4788770377635956,
+                  -0.4788770377635956,
+                  -0.4788770377635956,
+                  -0.4788770377635956,
+                  -0.03064536675810814,
+                  4.44835080537999
+                ],
+                [
+                  -0.21313701570034027,
+                  -0.21071258187294006,
+                  -0.3223254382610321,
+                  -0.014522704295814037,
+                  -0.7825794219970703,
+                  -0.20852231979370117,
+                  -0.2069541960954666,
+                  0.9394165873527527,
+                  -0.7612674832344055,
+                  1.5661003589630127,
+                  8.494074821472168,
+                  2.411933422088623,
+                  -0.08569735288619995,
+                  1.4229990243911743,
+                  1.3541791439056396,
+                  5.146463871002197,
+                  5.146463871002197,
+                  -0.3486449122428894,
+                  0.07174193114042282,
+                  1.7235392332077026,
+                  1.7235392332077026,
+                  -2.2380640506744385,
+                  -2.1598141193389893,
+                  -0.6416699886322021,
+                  -0.7453026175498962,
+                  -0.6416699886322021,
+                  -0.5310325026512146,
+                  -0.9843185544013977,
+                  -0.9843185544013977,
+                  -0.9843185544013977,
+                  -5.340619087219238,
+                  -0.28657767176628113,
+                  -0.10053498297929764,
+                  -0.10053498297929764,
+                  -0.10053498297929764,
+                  -2.069099187850952,
+                  -1.897068977355957,
+                  -0.06836560368537903,
+                  -0.06836560368537903,
+                  -0.06836560368537903,
+                  -0.06836560368537903,
+                  -0.13916723430156708,
+                  0.20467440492326347
+                ],
+                [
+                  -0.3035111129283905,
+                  -0.3005300760269165,
+                  -0.46546661853790283,
+                  -0.045522406697273254,
+                  -0.12960584461688995,
+                  -0.2986935079097748,
+                  -0.29765257239341736,
+                  -0.8289374709129333,
+                  -0.06748514622449875,
+                  -0.5553209185600281,
+                  -1.5532994270324707,
+                  1.4289458990097046,
+                  1.889296531677246,
+                  -2.0728421211242676,
+                  -0.32713082432746887,
+                  -0.7524856925010681,
+                  -0.7524856925010681,
+                  0.5108009576797485,
+                  1.6925760507583618,
+                  -0.7433483600616455,
+                  -0.7433483600616455,
+                  5.129866600036621,
+                  6.0945611000061035,
+                  2.834665060043335,
+                  2.0858049392700195,
+                  2.834665060043335,
+                  3.799344539642334,
+                  -1.3547229766845703,
+                  -1.3547229766845703,
+                  -1.3547229766845703,
+                  -1.2458521127700806,
+                  -0.3552802503108978,
+                  -0.1488276720046997,
+                  -0.1488276720046997,
+                  -0.1488276720046997,
+                  -0.9855422973632812,
+                  -0.777176022529602,
+                  -0.7279932498931885,
+                  -0.7279932498931885,
+                  -0.7279932498931885,
+                  -0.7279932498931885,
+                  -0.13947197794914246,
+                  0.29874669142759197
+                ],
+                [
+                  -0.2915703356266022,
+                  -0.2894129157066345,
+                  0.913072943687439,
+                  -0.546446681022644,
+                  -0.6399948000907898,
+                  -0.2637583911418915,
+                  -0.2602965831756592,
+                  -1.0210210084915161,
+                  -0.06026294082403183,
+                  0.6270158886909485,
+                  -6.137573719024658,
+                  0.6504794359207153,
+                  2.2136754989624023,
+                  2.697253704071045,
+                  0.2505042254924774,
+                  -0.5168654918670654,
+                  -0.5168654918670654,
+                  1.4301846027374268,
+                  0.5419998168945312,
+                  -0.9260308146476746,
+                  -0.9260308146476746,
+                  -1.0417673587799072,
+                  -2.672312021255493,
+                  -0.02805972285568714,
+                  -0.5403237342834473,
+                  -0.02805972285568714,
+                  -1.6482192277908325,
+                  3.2387261390686035,
+                  3.2387261390686035,
+                  3.2387261390686035,
+                  7.7949652671813965,
+                  1.473505973815918,
+                  3.4403738975524902,
+                  3.4403738975524902,
+                  3.4403738975524902,
+                  -2.4124703407287598,
+                  -0.3954481780529022,
+                  -0.48091238737106323,
+                  -0.48091238737106323,
+                  -0.48091238737106323,
+                  -0.48091238737106323,
+                  -1.9475597143173218,
+                  0.14706754485497686
+                ],
+                [
+                  -0.38889995217323303,
+                  -0.3829534947872162,
+                  0.24744057655334473,
+                  -0.4463910758495331,
+                  -0.596986711025238,
+                  -0.36534085869789124,
+                  -0.35980239510536194,
+                  -0.3717857301235199,
+                  -0.10911048948764801,
+                  -0.39885103702545166,
+                  -0.3132801949977875,
+                  0.8323299288749695,
+                  -1.5219666957855225,
+                  -0.07917620241641998,
+                  2.3493189811706543,
+                  -1.7690889835357666,
+                  -1.7690889835357666,
+                  2.0333034992218018,
+                  -1.3649133443832397,
+                  -0.18747378885746002,
+                  -0.18747378885746002,
+                  -1.5853729248046875,
+                  -0.3219309449195862,
+                  -1.5479265451431274,
+                  1.1359831094741821,
+                  -1.5479265451431274,
+                  -0.2754605710506439,
+                  -0.7192350625991821,
+                  -0.7192350625991821,
+                  -0.7192350625991821,
+                  0,
+                  0.7455020546913147,
+                  -1.3044530153274536,
+                  -1.3044530153274536,
+                  -1.3044530153274536,
+                  6.431705474853516,
+                  4.311252117156982,
+                  2.6893844604492188,
+                  2.6893844604492188,
+                  2.6893844604492188,
+                  2.6893844604492188,
+                  2.1202337741851807,
+                  0.3587238783747879
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "bye"
+      ],
+      [
+        "en",
+        "goodbye"
+      ],
+      [
+        "en",
+        "see you later"
+      ],
+      [
+        "en",
+        "My monitor is not working"
+      ],
+      [
+        "en",
+        "The screen is blank"
+      ],
+      [
+        "en",
+        "I can't see anything on my monitor"
+      ],
+      [
+        "en",
+        "My printer is not printing"
+      ],
+      [
+        "en",
+        "The printer is giving an error"
+      ],
+      [
+        "en",
+        "I can't print documents"
+      ],
+      [
+        "en",
+        "I can't connect to the internet"
+      ],
+      [
+        "en",
+        "My Wi-Fi is not working"
+      ],
+      [
+        "en",
+        "How do I fix network issues?"
+      ],
+      [
+        "en",
+        "The software is crashing"
+      ],
+      [
+        "en",
+        "I have trouble with an application"
+      ],
+      [
+        "en",
+        "How do I update the software?"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greetings": [
+          {
+            "answer": "Hello! How can I assist you today?"
+          }
+        ],
+        "goodbye": [
+          {
+            "answer": "Goodbye! Have a great day!"
+          }
+        ],
+        "monitor_issue": [
+          {
+            "answer": "If your monitor is not working, please check the power connection and ensure that the monitor is turned on. If the issue persists, try restarting your computer or check the cables."
+          }
+        ],
+        "printer_issue": [
+          {
+            "answer": "Ensure that the printer is properly connected and has paper. Check if there are any error messages on the printer display. Restart the printer and try printing again. If the problem continues, check the printer's drivers and settings."
+          }
+        ],
+        "network_issue": [
+          {
+            "answer": "Check if your router is plugged in and powered on. Make sure you are within the range of the Wi-Fi signal. Restart your router and your device. If the issue persists, contact your network provider or IT support."
+          }
+        ],
+        "software_issue": [
+          {
+            "answer": "Try restarting the application or your computer. Check for any available updates for the software and install them. If the issue continues, reinstall the software or contact support for further assistance."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

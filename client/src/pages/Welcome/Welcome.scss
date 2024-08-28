@@ -1,0 +1,47 @@
+/* Welcome.scss */
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Full viewport height */
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* Light background color */
+  
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #333; /* Dark text color */
+    }
+  
+    img {
+      margin-bottom: 20px;
+      border-radius: 10px; /* Optional: adds rounded corners to the image */
+    }
+  
+    p {
+      font-size: 1.25rem;
+      color: #666; /* Gray text color */
+      margin-bottom: 20px;
+    }
+  
+    .button-container {
+      .get-started-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: white;
+        background-color: #007bff;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,32 @@
+/* Import Bootstrap CSS */
+/* @import '~bootstrap/dist/css/bootstrap.min.css'; */
+
+/* Global Styles */
+
+/* Import Bootstrap CSS */
+/* Make sure this import is removed if you import Bootstrap directly in your main entry file */
+
+/* Global Styles */
+/* 
+@keyframes backgroundAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   /* Ensures footer is positioned at the bottom */
+  min-height: 100vh; 
+  background: white;
+  background-size: 400% 400%;
+  animation: backgroundAnimation 5s ease infinite;
+}
+
+
+
+
+/* Additional Global Styles */
+
+
+/* Add flexbox to handle layout */
